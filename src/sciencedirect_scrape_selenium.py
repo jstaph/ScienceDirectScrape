@@ -1,25 +1,15 @@
-from bs4 import BeautifulSoup
-import urllib
-from urllib.request import urlopen, Request
-from http.cookiejar import CookieJar
-import re
 import os
-from selenium.webdriver.common.keys import Keys
-import pathlib
-from tqdm import tqdm
-import requests
-import gzip
-import pickle
-import unittest
-from selenium import webdriver
 import time
-from os import walk
-from urllib.request import urlopen
+import urllib
+from http.cookiejar import CookieJar
 
+from bs4 import BeautifulSoup
+
+from selenium import webdriver
 
 f = []
 mypath = r"C:\\Users\\lanka\\Desktop\\Lab\\DARPA\\Scrape_Web\\Updated_Downloads\\Journal of Business Research"
-for (dirpath, dirnames, filenames) in walk(mypath):
+for (dirpath, dirnames, filenames) in os.walk(mypath):
     f.extend(filenames)
     break
 # print(f[0])
@@ -72,7 +62,7 @@ print(len(issue_urls))
 total_count = 0
 for i in issue_urls:
 
-    req = Request(url=i, headers=headers)
+    req = urllib.request.Request(url=i, headers=headers)
     html = urllib.request.urlopen(req).read()
     soup = BeautifulSoup(html)
     # print(i)
