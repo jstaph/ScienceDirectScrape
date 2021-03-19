@@ -1,0 +1,34 @@
+# exclude keys in /keys
+keys/*
+# exception to keys - include readme
+!keys/readme.md
+*.retry
+
+personal/
+collections/ansible_collections/
+roles/
+playbooks/private
+
+# vim ignores
+[._]*.s[a-v][a-z]
+!*.svg  # comment out if you don't need vector files
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+Session.vim
+Sessionx.vim
+.netrwhist
+*~
+tags
+[._]*.un~
+
+# vscode ignores
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+.python-version
+.vscode
